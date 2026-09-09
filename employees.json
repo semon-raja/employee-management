@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Alex",
+    "department": "Testing",
+    "project": "API",
+    "attendance": 21,
+    "id": 3
+  },
+  {
+    "name": "Rahul",
+    "department": "Testing",
+    "project": "API",
+    "attendance": 23,
+    "id": 4
+  },
+  {
+    "name": "Rohit",
+    "department": "Development",
+    "project": "Website",
+    "attendance": 19,
+    "id": 5
+  },
+  {
+    "name": "Arjun",
+    "department": "Development",
+    "project": "Backend API",
+    "attendance": 24,
+    "id": 6
+  },
+  {
+    "name": "Giflin",
+    "department": "UI/UX",
+    "project": "API",
+    "attendance": 23,
+    "id": 7
+  }
+]
