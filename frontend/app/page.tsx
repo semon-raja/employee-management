@@ -15,17 +15,30 @@ import {
   Legend,
 } from "recharts";
 
+interface Employee {
+  id: number;
+  name: string;
+  department: string;
+  role: string;
+  project: string;
+  attendance: number;
+  status: string;
+  employmentType: string;
+  joiningDate: string;
+  performance: number;
+}
+
 export default function Home() {
-  const [employees, setEmployees] = useState([]);
+  const [employees, setEmployees] = useState<Employee[]>([]);
   const [selectedDepartment, setSelectedDepartment] = useState("All");
   const [selectedProject, setSelectedProject] = useState("All");
   const [selectedStatus, setSelectedStatus] = useState("All");
   const [employeeId, setEmployeeId] = useState("");
-  const [searchedEmployee, setSearchedEmployee] = useState(null);
+  const [searchedEmployee, setSearchedEmployee] = useState<Employee | null>(null);
   const [searchError, setSearchError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/employees")
+    fetch("/employees")
       .then((response) => response.json())
       .then((data) => {
         setEmployees(data);
@@ -80,20 +93,20 @@ const projects = [
       : 0;
 
   // Employees by department
-  const departmentData = Object.values(
-    filteredEmployees.reduce((acc, employee) => {
-      if (!acc[employee.department]) {
-        acc[employee.department] = {
-          department: employee.department,
-          employees: 0,
-        };
-      }
+const departmentData = Object.values(
+  filteredEmployees.reduce((acc, employee) => {
+    if (!acc[employee.department]) {
+      acc[employee.department] = {
+        department: employee.department,
+        employees: 0,
+      };
+    }
 
-      acc[employee.department].employees += 1;
+    acc[employee.department].employees += 1;
 
-      return acc;
-    }, {})
-  );
+    return acc;
+  }, {} as Record<string, { department: string; employees: number }>)
+);
 
   // Employees by status
   const statusData = Object.values(
@@ -108,7 +121,7 @@ const projects = [
       acc[employee.status].employees += 1;
 
       return acc;
-    }, {})
+}, {} as Record<string, { status: string; employees: number }>)
   );
 
   // Employees by project
@@ -124,7 +137,7 @@ const projects = [
       acc[employee.project].employees += 1;
 
       return acc;
-    }, {})
+}, {} as Record<string, { project: string; employees: number }>)
   );
 
   // Employee performance
@@ -141,7 +154,7 @@ const searchEmployee = () => {
   setSearchError("");
   setSearchedEmployee(null);
 
-  fetch(`http://localhost:5000/employees/${employeeId}`)
+  fetch(`/employees/${employeeId}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Employee not found");

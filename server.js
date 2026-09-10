@@ -1,10 +1,12 @@
 const fs = require("fs");
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 app.use(cors());
-app.use(express.static("public"));
+
+app.use(express.static(path.join(__dirname, "frontend", "out")));
 
 app.use(express.json());
 let employees = [];
