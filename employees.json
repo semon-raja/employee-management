@@ -2,36 +2,61 @@
   {
     "name": "Alex",
     "department": "Testing",
+    "role": "QA Tester",
     "project": "API",
     "attendance": 21,
+    "status": "Active",
+    "employmentType": "Full Time",
+    "joiningDate": "2024-03-15",
+    "performance": 4.2,
     "id": 3
   },
   {
     "name": "Rahul",
     "department": "Testing",
+    "role": "QA Tester",
     "project": "API",
     "attendance": 23,
+    "status": "Active",
+    "employmentType": "Full Time",
+    "joiningDate": "2023-08-10",
+    "performance": 4.5,
     "id": 4
   },
   {
     "name": "Rohit",
     "department": "Development",
+    "role": "Software Developer",
     "project": "Website",
     "attendance": 19,
+    "status": "On Leave",
+    "employmentType": "Full Time",
+    "joiningDate": "2024-01-20",
+    "performance": 3.8,
     "id": 5
   },
   {
     "name": "Arjun",
     "department": "Development",
+    "role": "Backend Developer",
     "project": "Backend API",
     "attendance": 24,
+    "status": "Active",
+    "employmentType": "Full Time",
+    "joiningDate": "2022-11-05",
+    "performance": 4.7,
     "id": 6
   },
   {
-    "name": "Giflin",
+    "name": "Madhu",
     "department": "UI/UX",
-    "project": "API",
+    "role": "UI/UX Designer",
+    "project": "Webpage",
     "attendance": 23,
+    "status": "Active",
+    "employmentType": "Intern",
+    "joiningDate": "2025-06-12",
+    "performance": 4.1,
     "id": 7
   }
 ]
